@@ -6,15 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.30.1",
     "@vitejs/plugin-react": "^6.0.1",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "wrangler": "^4.77.0"
   },
   "dependencies": {
     "react": "^19.2.4",
