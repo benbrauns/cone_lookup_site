@@ -13,7 +13,15 @@ export default function App() {
     useEffect(() => {
         fetch('/cone_drill.json')
             .then(r => r.json())
-            .then(data => setPlayers(data))
+            .then(data => {
+                data.push({
+                    season: 2011,
+                    player_name: "Jon Meerdink",
+                    headshot: "/jon.webp",
+                    completed_cone: false
+                })
+                setPlayers(data)
+            })
     }, [])
 
     const normalizedQuery = alphaOnly(query)
